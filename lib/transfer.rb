@@ -9,10 +9,10 @@ class Transfer
     @amount = amount
   end
   
-  def valid?(sender, receiver)
-    sender_is_valid = BankAccount.new(sender).valid? 
-    receiver_is_valid = BankAccount.new(receiver).valid?
-    if receiver_is_valid == true && sender_is_valid == true
+  def valid?
+    # sender_is_valid = BankAccount.new(sender).valid? 
+    # receiver_is_valid = BankAccount.new(receiver).valid?
+    if sender.valid? && receiver.valid? == true
       true
     else
       false
