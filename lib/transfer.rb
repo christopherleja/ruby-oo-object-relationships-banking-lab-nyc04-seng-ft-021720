@@ -22,9 +22,6 @@ class Transfer
       @status = "rejected"
       return "Transaction rejected. Please check your account balance."
       
-    elsif @status == "complete"
-      "This transaction has already been completed"
-      
     else valid?
       @sender.deposit(@amount*-1)
       @receiver.deposit(@amount)
