@@ -25,12 +25,12 @@ class Transfer
     elsif @status == "complete"
       "This transaction has already been completed"
       
-    elsif valid?
+    else valid?
       @sender.deposit(@amount*-1) && @receiver.deposit(@amount)
       @status = "complete"
     end
   end
 
-  def reverse_transfer(sender, receiver, amount)
+  def reverse_transfer
   end
 end
