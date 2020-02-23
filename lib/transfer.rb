@@ -25,7 +25,7 @@ class Transfer
       @status = "rejected"
       
     elsif valid?
-      @sender.deposit(amount * -1) && @receiver.deposit(amount)
+      @sender.deposit(@amount * -1) && @receiver.deposit(@amount)
       @status = "complete"
     end
   end
