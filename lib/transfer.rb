@@ -29,6 +29,7 @@ class Transfer
       @sender.deposit(@amount*-1)
       @receiver.deposit(@amount)
       @status = "complete"
+      "Your transfer was successful"
     end
   end
 
@@ -37,6 +38,7 @@ class Transfer
       @sender.deposit(@amount)
       @receiver.deposit(@amount*-1)
       @status = "reversed"
+      "The transfer has been successfully reversed"
     end
   end
 end
