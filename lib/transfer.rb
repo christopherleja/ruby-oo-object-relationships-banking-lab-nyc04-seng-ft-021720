@@ -16,9 +16,9 @@ class Transfer
     end
   end
   
-  def execute_transaction(sender, receiver, amount)
+  def execute_transaction(amount)
     if self.valid?
-      BankAccount.new(@sender).balance -= amount && BankAccount.new(@receiver).balance += amount
+      sender.balance -= amount && receiver.balance += amount
     end
   end
 
