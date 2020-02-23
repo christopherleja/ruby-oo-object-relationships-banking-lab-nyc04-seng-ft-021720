@@ -22,7 +22,7 @@ class Transfer
     elsif valid?
       sender.deposit(amount * -1) && receiver.deposit(amount)
       self.status = "complete"
-    elsif sender.valid != true
+    elsif sender.valid? != true
       "Transaction rejected. Please check your account balance."
     end
   end
