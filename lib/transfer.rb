@@ -22,7 +22,7 @@ class Transfer
       
     elsif @sender.balance < @amount || sender.valid? != true
       @status = "rejected"
-      "Transaction rejected. Please check your account balance."
+      return "Transaction rejected. Please check your account balance."
       
     elsif valid?
       @sender.deposit(@amount * -1) && @receiver.deposit(@amount)
