@@ -19,8 +19,8 @@ class Transfer
   def execute_transaction
     if status == "complete"
       "This transaction has already been completed"
-    elsif valid? != true
-      p "Transaction rejected. Please check your account balance."
+    elsif self.valid? != true
+      "Transaction rejected. Please check your account balance."
       status = "rejected"
     elsif valid?
       sender.deposit(amount * -1) && receiver.deposit(amount)
