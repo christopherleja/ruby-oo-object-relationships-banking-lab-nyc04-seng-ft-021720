@@ -17,7 +17,7 @@ class Transfer
   end
   
   def execute_transaction
-    if status == "complete"
+    if @status == "complete"
       "This transaction has already been completed"
     elsif sender.balance < amount
       @status = "rejected"
