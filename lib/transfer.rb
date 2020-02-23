@@ -21,7 +21,7 @@ class Transfer
       "This transaction has already been completed"
       
     elsif @sender.balance < @amount
-      return "Transaction rejected. Please check your account balance."
+      p "Transaction rejected. Please check your account balance."
       @status = "rejected"
       
     elsif valid?
