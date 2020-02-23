@@ -20,7 +20,8 @@ class Transfer
     if status == "complete"
       "This transaction has already been completed"
     elsif valid? != true
-      p "Transaction rejected. Please check your account balance."
+      "Transaction rejected. Please check your account balance."
+      status = "rejected"
     elsif valid?
       sender.deposit(amount * -1) && receiver.deposit(amount)
       self.status = "complete"
